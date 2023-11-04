@@ -16,15 +16,18 @@ This method works for Nook Glowlight 4/4e, but it also possible that it works fo
 My early attempts to implement this method for my Nook involved working with additional applications and Android tools in order to make this method univeral and working with any reader application. But the results were mixed. First, this kind of approach requires the device to be rooted. Second, inter-process communication while involving root-wrapped calls probably took some of the energy I was trying to save in the first place. But then I found that KOReader, my reader of application of choice, is actually capable of very sofisticated customization using Lua language and its sub-system allowing patching. So, this patch was born.   
 
 How the patch is working
-* it is installed as Phase 2 patch ([see the docs](https://github.com/koreader/koreader/wiki/User-patches)) after UIManager is ready
-* It intercepts a method onGotoViewRel of two known modules of the reader. This method is used when the reader needs to show a new part of the text relative to the current one. This is the case both for tapping at the areas that take care of next/previous pages and for hardware buttons for listing.
+* it is installed as 'Phase 2' patch ([see the docs](https://github.com/koreader/koreader/wiki/User-patches)) after UIManager is ready
+* It intercepts a method `onGotoViewRel` of two known modules of the reader. This method is used when the reader needs to show a new part of the text relative to the current one. This is the case both for tapping at the areas that take care of next/previous pages and for hardware buttons for listing.
 * When the event is detected, the patch sets `power_enhance_enable` to `0` and  waits about 1 second (using the UIManager scheduler).
-* After the one-second delay it sets `power_enhance_enable` to '1'.
+* After the one-second delay it sets `power_enhance_enable` to `1`.
 * The rest is the system job. For successfully installed and working patch the device will be in the Deep Sleep state until a new touch and press event occures. 
 
 What this patch allows
 * My estimation is that you will probably get about 4000-6000 page turns per single charge. But obviusly no mass book is that big. So between the books you will probably have other activities on the device (like choosing a new book or uploading it) that unfortunately fully utilize CPU power while draining it. So, the real numbers may be different. 
 * Notice that I'm talking here not about time (... hours per charge), but about page turns. This means that a little different style of reading is possible when you have your book opened and standing nearby and you lazily turn a attention from some main task to the book without locking and unlocking it. (Remember to increase screen off timeout for this, I will talk about it later)  
+
+# How to install / how to use
+
 
 
 
