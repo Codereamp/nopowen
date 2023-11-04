@@ -23,7 +23,7 @@ How the patch is working
 * The rest is the system job. For successfully installed and working patch the device will be in the Deep Sleep state until a new touch and press event occures. 
 
 What this patch allows
-* My estimation is that you will probably get about 4000-6000 page turns per single charge. But obviusly no mass book is that big. So between the books you will probably have other activities on the device (like choosing a new book or uploading it) that unfortunately fully utilize CPU power while draining it. So, the real numbers may be different. 
+* My estimation is that you will probably get about 4000-6000 page turns per single charge. But obviusly no mass book is that big. So between the books you will probably have other activities on the device (like choosing a new book or uploading it) that unfortunately fully utilize CPU power while draining it. So, the real numbers may be different. To convert turns into time let's assume that you consume a single page after half a minute. Then the time estimate for 4000-6000 turns will be 33-50 hours of continous reading. 
 * Notice that I'm talking here not about time (... hours per charge), but about page turns. This means that a little different style of reading is possible when you have your book opened and standing nearby and you lazily turn a attention from some main task to the book without locking and unlocking it. (Remember to increase screen off timeout for this, I will talk about it later)  
 
 # How to install / how to use
