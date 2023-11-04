@@ -39,7 +39,13 @@ Main requirements/steps
 
 Additional (optional) advanced steps
 
-* I noticed that by default my Nook was using `CPU Governor` set to `performance`. This meant that the CPU was constantly clocking at 1.8 Ghz that supposedely drained battery at the peak when the CPU was working. My recommendation is to set it to `intractive`. The tests showed that in this case most of the time the CPU is clocked at 480 Mhz, while occasionally going to 1.2 GHz. This should have save about 30-50% of the battery for the state when the CPU is fully awake (Short periods of actually turning pages on the screen). But to change this setting you probably need to root your device. For changing this setting I used [Kernel Adiutor](https://f-droid.org/en/packages/com.nhellfire.kerneladiutor/) 
+* I noticed that by default my Nook was using `CPU Governor` set to `performance`. This meant that the CPU was constantly clocking at 1.8 Ghz that supposedely drained battery at the peak when the CPU was working. My recommendation is to set it to `interactive`. The tests showed that in this case most of the time the CPU is clocked at 480 Mhz, while occasionally going to 1.2 GHz. This should have save about 30-50% of the battery for the state when the CPU is fully awake (Short periods of actually turning pages on the screen). Other variants of this settings that might suite you are `conservative` and `powersave`. But to change this setting you probably need to root your device. For changing this setting I used [Kernel Adiutor](https://f-droid.org/en/packages/com.nhellfire.kerneladiutor/) 
 * Increase the Screen Off Time Out value if you have plans for lazy reading. Screen Off time is the setting that sends the device in the locked state (with the screensaver image) after period of inactivity. It is usually small and with the official UI can be changed up to 1 hour. The lazy reading I described before is about leaving the reader with the current page shown and turning attention to something else until the you're ready to return to reading. If this period is long (you went for a couple of hours to prepare dinner), then the Screen Off time might fire before you return to reading so it's a good idea to increase it. To exceed 1 hour limit you should use other tools, for example to change it with adb you should use `adb shell settings put system screen_off_timeout 3600000`. This line correspondes to the mentioned 1 hour so you have to increase 3600000 accordingly 
+
+For temporary disabling the patch you may use the patch management available in the KOReader menu. Basically this system just renames the pathches so they become incompatible with correct naming.
+
+# Known limitations
+
+* This patch as of this writing was tested on KOReader versions 2023-10, 2023-08 and should work in the future versions
 
 
