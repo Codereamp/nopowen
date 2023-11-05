@@ -34,7 +34,7 @@ Main requirements/steps
 * You don't need a rooted device for this patch. Only KOReader should be installed and access to file manager in order to copy the patch to the required location.  
 * You have to use the general version of KOReader. This app has a different [variant](https://f-droid.org/en/packages/org.koreader.launcher.fdroid/) installed through the FDroid ecosystem. Probably due to extensive capabilities of the scripts, the developers decided to disable them for a version intended for a 'market' with high secure expectations. The package of the script-capable version is `org.koreader.launcher` and usually available throughout the release links of the KOReader project site.
 * You have to enable "Modify System Settings" permission in the KOReader app settings. KOReader (luckily for this patch) has this permission request for unrelated reasons, but it may be switched off by default or by the user. But don't worry if you forget to switch the setting, the patch will gracefully complain if it can't change the setting during the execution.
-* Copy the patch to `/sdcard/koreader/patches` folder . The patches sub-folder might not exist (if you didn't install patches before) so create it in this case.
+* Copy the patch `2111-nopowen-patch.lua` to `/sdcard/koreader/patches` folder . The patches sub-folder might not exist (if you didn't install patches before) so create it in this case.
 * Restart KOReader. You have to fully restart the program. For this use the menu item 'Exit' available in the burger (right) menu.
 
 Additional (optional) advanced steps
