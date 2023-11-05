@@ -49,7 +49,7 @@ How to check that the script is working
 For temporary disabling the patch you may use the patch management available in the KOReader menu. Basically this system just renames the pathches so they become incompatible with correct naming.
 
 # Known limitations
-
-* This patch as of this writing was tested on KOReader versions 2023-10, 2023-08 and should work in the future versions
+* The patch should work with frontlight on. The device is still goes to Deep Sleep, while draining some energy for ligting. But it looks like Nook Glowlight 4 has a bug so take this into account. If you use the Home button long press to toggle the lighting, right after the action the internal DS system breaks, so device doesn't go to DS after this at all. The solutions that are possible are either briefly send it to the lock state and back (say, for 5 seconds) or to use the UI element for switching the lighting. I'm almost sure this is a bug, because even bn.ereader app is affected so can't send the device to DS after the Home button switching  
+* This patch as of this writing was tested on KOReader versions 2023-10, 2023-08 and probably should be compatible with future versions until some serious refactoring in the code takes place.  
 
 
