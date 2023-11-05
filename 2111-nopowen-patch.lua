@@ -188,36 +188,6 @@ local UIManager_show_original = UIManager.show
 
 local InfoMessage = require("ui/widget/infomessage")
 
-
---[[
-local power_enhance_enable_set = function(value, allow_ui_error_message)
-  local ok, additional = false, ''
-   
-  if ActualSleep then
-    ok, additional = pcall(android_settings_system_set_int, "power_enhance_enable", value)
-  else
-     -- setting ok to false and ActualSleep to fales will allow seeing how failed message is presented in case of error
-    ok, additional = true, 'no message'
-  end  
-  
-  if ok then
-    loclog('settings set pcall returned ok') 
-    return additional
-  else  
-    loclog('failed to set power_enhance_enable (err msg: '..additional..')')
-    if allow_ui_error_message then 
-       loclog('allow_ui_error_message true, trying to show UI message about this')
-       ok, additional = pcall(UIManager_show_original, UIManager, 
-         InfoMessage:new{text = "KRP: setting power_enhance_enable failed, make sure you set 'Modify system settings' to 'allowed'"})
-       if not ok then
-         loclog('failed to UI show message with err: '..additional)
-       end       
-    end   
-  end  
-end
-
---]]
-
 local power_enhance_enable_set = function(value, allow_ui_error_message)
   local ok, additional = false, ''
    
